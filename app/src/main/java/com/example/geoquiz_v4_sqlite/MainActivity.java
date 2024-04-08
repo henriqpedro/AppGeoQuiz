@@ -144,12 +144,14 @@ public class MainActivity extends AppCompatActivity {
                     if (cursor.getCount() == 0) {
                         mTextViewQuestoesArmazenadas.setText("Nada a apresentar");
                         Log.i("MSGS", "Nenhum resultado");
-                    }
+                    } else
+                        mTextViewQuestoesArmazenadas.setText("");
                     //Log.i("MSGS", Integer.toString(cursor.getCount()));
                     //Log.i("MSGS", "cursor não nulo!");
                     try {
                         int index = 1;
                         cursor.moveToFirst();
+
                         while (!cursor.isAfterLast()) {
                             String texto = "Resposta " + index++ + ": ";
                             if (cursor.getInt(cursor.getColumnIndex(RespostasDBSchema.RespostasTbl.Cols.RESPOSTA_OFERECIDA)) == 1)
@@ -165,7 +167,6 @@ public class MainActivity extends AppCompatActivity {
                             if (cursor.getInt(cursor.getColumnIndex(RespostasDBSchema.RespostasTbl.Cols.COLOU)) == 1)
                                 texto += " - COLADA";
 
-                            mTextViewQuestoesArmazenadas.setText(texto);
                             Log.i("MSGS", texto);
 
                             mTextViewQuestoesArmazenadas.append(texto + "\n");
