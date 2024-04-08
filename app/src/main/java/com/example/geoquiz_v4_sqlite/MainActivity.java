@@ -165,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
                             if (cursor.getInt(cursor.getColumnIndex(RespostasDBSchema.RespostasTbl.Cols.COLOU)) == 1)
                                 texto += " - COLADA";
 
+                            mTextViewQuestoesArmazenadas.setText(texto);
                             Log.i("MSGS", texto);
 
                             mTextViewQuestoesArmazenadas.append(texto + "\n");
