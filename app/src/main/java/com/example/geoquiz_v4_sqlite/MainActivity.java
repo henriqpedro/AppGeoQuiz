@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
                         cursor.moveToFirst();
 
                         while (!cursor.isAfterLast()) {
-                            String texto = "Resposta " + index++ + ": ";
+                            String texto = "Resposta " + cursor.getInt(cursor.getColumnIndex("_id")) + ": ";
                             if (cursor.getInt(cursor.getColumnIndex(RespostasDBSchema.RespostasTbl.Cols.RESPOSTA_OFERECIDA)) == 1)
                                 texto += "Verdadeira ";
                             else

@@ -19,8 +19,8 @@ public class RespostaDB {
 
         // pares chave-valor: nomes das colunas - valores
         valores.put(RespostasDBSchema.RespostasTbl.Cols.UUID, r.getId().toString());
-        valores.put(RespostasDBSchema.RespostasTbl.Cols.RESPOSTA_OFERECIDA, r.getRespostaCorreta());
-        valores.put(RespostasDBSchema.RespostasTbl.Cols.RESPOSTA_CORRETA, r.isRespostaOferecida());
+        valores.put(RespostasDBSchema.RespostasTbl.Cols.RESPOSTA_OFERECIDA, r.isRespostaOferecida());
+        valores.put(RespostasDBSchema.RespostasTbl.Cols.RESPOSTA_CORRETA, r.getRespostaCorreta());
         valores.put(RespostasDBSchema.RespostasTbl.Cols.COLOU, r.isColou());
         return valores;
     }
